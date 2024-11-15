@@ -33,7 +33,7 @@ document.addEventListener(
 
 document
   .querySelector<HTMLFormElement>('#form')
-  ?.addEventListener('submit', (e) => {
+  ?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!e.currentTarget) {
@@ -51,7 +51,52 @@ document
     const searchParams = new URLSearchParams('');
     searchParams.set('email', email);
 
-    // TODO: submit this to an API
-    // Then redirect to success
+    // Submit to API
+    await submit(form);
+
+    // Then redirect to success page
     location.href = '/compra-success/?' + searchParams.toString();
   });
+
+function assertExistence(k: string, v: string) {
+  if (!v) {
+    throw new Error(`Could not find contents of env var: '${k}'`);
+  }
+  return v;
+}
+
+async function submit(form: FormData) {
+  const key = assertExistence(
+    'VITE_WRITE_SHEET_KEY',
+    import.meta.env.VITE_WRITE_SHEET_KEY
+  );
+  const sheet = assertExistence(
+    'VITE_WRITE_SHEET_NAME',
+    import.meta.env.VITE_WRITE_SHEET_NAME
+  );
+  const url = assertExistence(
+    'VITE_WRITE_SHEET_URL',
+    import.meta.env.VITE_WRITE_SHEET_URL
+  );
+
+  const response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify({
+      key,
+      sheet,
+      method: 'POST',
+      payload: {
+        Email: form.get('email'),
+        Item: form.get('item'),
+        'Cidade/Estado': form.get('city-state'),
+        'Valor Mínimo': form.get('min-value'),
+        'Valor Máximo': form.get('max-value'),
+        Descrição: form.get('desc'),
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    alert('Falhou ao salvar.');
+  }
+}
