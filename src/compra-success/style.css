@@ -1,0 +1,10 @@
+._info {
+  font-size: min(21vw, 1.5rem);
+
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+._button-wrapper {
+  display: flex;
+}

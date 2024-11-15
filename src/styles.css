@@ -33,6 +33,7 @@ body {
 /*  min-height: 100vh; */
 
   min-height: var(--min-height);
+  padding-bottom: 1rem;
 }
 
 .nav {
@@ -134,7 +135,7 @@ body {
 }
 
 .input, .textarea {
-  padding: 0.5rem .25rem;
+  padding: 0.5rem .35rem;
   border: 1px solid #D9D9D9;
   border-radius: .75rem;
 }
