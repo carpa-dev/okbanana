@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&family=Zen+Loop&display=swap" rel="stylesheet">
+
+    <title>OK Banana</title>
+  </head>
+  <body>
+    <div class="app">
+      {{> nav }}
+
+      <div class="middle">
+        <div class="container">
+          <div class="font-2 _info text-center">
+            <p>Você quer comprar: <strong>churrasqueira elétrica</strong>, certo?</p>
+            <p>Preencha mais algumas informações para nos ajudar!</p>
+          </div>
+
+          <div class="_row">
+            <label class="label-group">
+              Email
+              <input type="text" class="input" />
+            </label>
+
+            <label class="label-group">
+              Endereço
+              <input type="text" class="input" />
+            </label>
+          </div>
+
+          <div class="_row">
+            <label class="label-group">
+              Valor Mínimo
+              <input type="text" class="input" />
+            </label>
+
+            <label class="label-group">
+              Valor Máximo
+              <input type="text" class="input" />
+            </label>
+          </div>
+
+          <label class="label-group">
+            Mais informações
+            <textarea class="textarea"></textarea>
+          </label>
+
+          <button class="btn btn-primary margin-auto block _send-button">Enviar</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.ts"></script>
+    <script type="module" src="/compra-2/script.ts"></script>
+  </body>
+</html>
+

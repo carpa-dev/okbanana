@@ -16,54 +16,18 @@
       <section class="middle">
         <div class="container">
           <div class="headlines">
-            <h1 class="headline">Ok Banana</h1>
-            <h2 class="subheadline">O que quiser, a preço de banana</h2>
+            <h1 class="headline font-1">Ok Banana</h1>
+            <h2 class="subheadline font-2">O que quiser, a preço de banana</h2>
           </div>
 
         <div class="search">
-          <form id="buy-submit-1">
-            <input type="text" required class="input" placeholder="Ex: Uma geladeira" />
+          <form id="buy-submit-1" method="get" action="/compra-2/">
+            <input type="text" name="item" required class="input super-rounded" placeholder="Ex: Uma geladeira" maxlength="255" />
             <button class="btn btn-primary">Quero comprar</button>
           </form>
         </div>
 </div>
       </section>
-    </div>
-
-    <div class="app">
-      <div class="container">
-        <p>Você quer comprar: churrasqueira elétrica, certo?</p>
-        <p>Preencha mais algumas informações para nos ajudar!</p>
-      </div>
-
-      <div class="container">
-        <label>
-          Email
-          <input type="text" class="input" />
-        </label>
-
-        <label>
-          Endereço
-          <input type="text" class="input" />
-        </label>
-
-        <label>
-          Valor Mínimo
-          <input type="text" class="input" />
-        </label>
-
-        <label>
-          Valor Máximo
-          <input type="text" class="input" />
-        </label>
-
-        <label>
-          Mais informações
-          <textarea></textarea>
-        </label>
-
-        <button class="btn btn-primary">Enviar</button>
-      </div>
     </div>
 
     <script type="module" src="/main.ts"></script>

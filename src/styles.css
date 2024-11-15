@@ -50,24 +50,6 @@ body {
   padding: 0 1rem;
 }
 
-.middle {
-  /*
-   *
-  border: 1px solid red;
-   * */
-  flex: 1;
-
-  /* centered its items vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.middle > * {
-  width: min(800px, 100%);
-  padding: 0 1rem;
-}
-
 
 .headlines {
   padding-bottom: 5rem;
@@ -85,11 +67,6 @@ body {
 }
 
 .middle .subheadline {
-  font-family: "Yaldevi", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-
   font-size: min(8vw, 2.5rem);
   text-align: center;
   margin-top: 0;
@@ -156,14 +133,65 @@ body {
   background-color: var(--text-color-dark);
 }
 
-.input {
-  padding: 0.5rem 1.5rem;
+.input, .textarea {
+  padding: 0.5rem .25rem;
   border: 1px solid #D9D9D9;
+  border-radius: .75rem;
+}
+.super-rounded {
   border-radius: 2rem;
 }
 
-.headline {
+.label-group {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.label-group > * {
+  margin-top: .25rem;
+}
+
+/* Some helpers. These seem weirdly familiar with tailwind */
+.text-center {
+  text-align: center;
+}
+.margin-auto {
+  margin: 0 auto;
+}
+.block {
+  display: block;
+}
+
+/** Typography **/
+.font-1 {
   font-family: "Zen Loop", cursive;
   font-weight: 400;
   font-style: normal;
 }
+
+.font-2 {
+  font-family: "Yaldevi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/** Reusable */
+.middle {
+  flex: 1;
+
+  /* centered its items vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle > * {
+  width: min(800px, 100%);
+  padding: 0 1rem;
+}
+
