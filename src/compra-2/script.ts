@@ -55,7 +55,7 @@ document
     await submit(form);
 
     // Then redirect to success page
-    location.href = '/compra-success/?' + searchParams.toString();
+    location.href = '../compra-success/?' + searchParams.toString();
   });
 
 function assertExistence(k: string, v: string) {

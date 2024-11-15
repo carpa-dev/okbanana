@@ -5,6 +5,8 @@ import glob from 'fast-glob';
 
 export default defineConfig({
   root: 'src',
+  // Relative so that we can inject a base href dynamically
+  base: './',
   build: {
     outDir: '../dist',
 

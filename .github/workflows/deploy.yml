@@ -38,7 +38,7 @@ jobs:
       - run: npm install
       - run: npm run build
         env:
-          BASE_URL: "www.carpa.dev/okbanana/"
+          VITE_BASE_HREF: "www.carpa.dev/okbanana/"
 
       # Deploy if PR
       - name: Setup Pages
