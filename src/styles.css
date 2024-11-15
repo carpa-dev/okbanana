@@ -69,6 +69,32 @@ body {
 }
 
 
+.headlines {
+  padding-bottom: 5rem;
+}
+
+.middle .headline {
+  font-size: min(21vw, 8rem);
+  text-align: center;
+  text-transform: uppercase;
+
+  /* gradient effect */
+  background-image: linear-gradient(#C9D61C, #E98D0D);
+  color: transparent;
+  background-clip: text;
+}
+
+.middle .subheadline {
+  font-family: "Yaldevi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+
+  font-size: min(8vw, 2.5rem);
+  text-align: center;
+  margin-top: 0;
+}
+
 .search {
   padding: 3rem 0;
 }
@@ -136,3 +162,8 @@ body {
   border-radius: 2rem;
 }
 
+.headline {
+  font-family: "Zen Loop", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
