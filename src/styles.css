@@ -9,12 +9,17 @@
   --fill-color: #000;
   --text-color-light: #fff;
   --text-color-dark: #383535;
+
+  /* TODO: value completely arbitrary, will need to be tweaked */
+  /* it works so that in small screens it will scroll */
+  --min-height: max(100vh, 500px);
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+  /*min-height: 100vh; */
+  min-height: var(--min-height);
 }
 
 .container {
@@ -25,6 +30,9 @@ body {
 .app {
   display: flex;
   flex-direction: column;
+/*  min-height: 100vh; */
+
+  min-height: var(--min-height);
 }
 
 .nav {
@@ -42,20 +50,89 @@ body {
   padding: 0 1rem;
 }
 
+.middle {
+  /*
+   *
+  border: 1px solid red;
+   * */
+  flex: 1;
+
+  /* centered its items vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle > * {
+  width: min(800px, 100%);
+  padding: 0 1rem;
+}
+
+
+.search {
+  padding: 3rem 0;
+}
+.search form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.search input {
+  width: 100%;
+}
+.search button {
+  width: min(100%, 15rem);
+}
 
 /** Basic components **/
 .btn {
   /* TODO: in rem */
   min-width: 115px;
-  border: 1px solid var(--fill-color);
   border-radius: 2rem;
   padding: 0.7rem 1.5rem;
 
   text-decoration: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-outline {
+  border: 1px solid var(--fill-color);
   color: var(--text-color-dark);
 }
 
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.btn-primary:hover {
+  filter: brightness(90%);
+}
+
+
 .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.btn-alternative {
   color: var(--text-color-light);
   background-color: var(--fill-color);
 }
+
+.btn-alternative:hover {
+  /* TODO: figure out a better way to lighten this, maybe use sass? */
+  background-color: var(--text-color-dark);
+}
+
+.input {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #D9D9D9;
+  border-radius: 2rem;
+}
+
