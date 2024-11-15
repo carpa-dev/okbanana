@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&family=Zen+Loop&display=swap" rel="stylesheet">
+
+    <title>OK Banana</title>
+  </head>
+  <body>
+    <div class="app">
+      {{> nav }}
+
+      <div class="middle">
+        <div class="container">
+          <div class="font-2 _info text-center">
+            <p>Você quer comprar: <strong id="query"></strong>, certo?</p>
+            <p>Preencha mais algumas informações para nos ajudar!</p>
+          </div>
+
+          <form id="form">
+            <input id="item-input-hidden" type="hidden" name="item" class="input" />
+            <div class="_row">
+              <label class="label-group">
+                Email
+                <input type="email" name="email" class="input" placeholder="ed@banana.com"/>
+              </label>
+
+              <label class="label-group">
+                Cidade/Estado
+                <input type="text" name="city-state" class="input" placeholder="Bananeiras, PB" />
+              </label>
+            </div>
+
+            <div class="_row">
+              <label class="label-group">
+                Valor Mínimo
+                <input type="number" name="min-value" inputmode="numeric" class="input" />
+              </label>
+
+              <label class="label-group">
+                Valor Máximo
+                <input type="number" name="max-value" inputmode="numeric" class="input" />
+              </label>
+            </div>
+
+            <label class="label-group">
+              Mais informações
+              <textarea class="textarea" name="desc" placeholder="Ex: De preferência freezer na parte de baixo e que seja grande."></textarea>
+            </label>
+
+            <button class="btn btn-primary margin-auto block _send-button">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.ts"></script>
+    <script type="module" src="/compra-2/script.ts"></script>
+  </body>
+</html>
+

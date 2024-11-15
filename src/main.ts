@@ -2,6 +2,8 @@
 import './reset.css';
 import './styles.css';
 
+import './index.ts';
+
 //import typescriptLogo from './typescript.svg';
 //import viteLogo from '/vite.svg';
 //import { setupCounter } from './counter.ts';

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&family=Zen+Loop&display=swap" rel="stylesheet">
+
+    <title>OK Banana</title>
+  </head>
+  <body>
+    <div class="app">
+      {{> nav }}
+
+      <section class="middle">
+        <div class="container">
+          <div class="headlines">
+            <h1 class="headline font-1">Ok Banana</h1>
+            <h2 class="subheadline font-2">O que quiser, a preço de banana</h2>
+          </div>
+
+        <div class="search">
+          <form id="buy-submit-1" method="get" action="/compra-2/">
+            <input type="text" name="item" required class="input super-rounded" placeholder="Ex: Uma geladeira" maxlength="255" />
+            <button class="btn btn-primary">Quero comprar</button>
+          </form>
+        </div>
+</div>
+      </section>
+    </div>
+
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>
