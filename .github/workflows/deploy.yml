@@ -38,7 +38,7 @@ jobs:
       - run: npm install
       - run: npm run build
         env:
-          VITE_BASE_HREF: "www.carpa.dev/okbanana/"
+          VITE_BASE_HREF: "https://www.carpa.dev/okbanana/"
           VITE_WRITE_SHEET_KEY: ${{ secrets.VITE_WRITE_SHEET_KEY }}
           VITE_WRITE_SHEET_NAME: ${{ secrets.VITE_WRITE_SHEET_NAME }}
           VITE_WRITE_SHEET_URL: ${{ secrets.VITE_WRITE_SHEET_URL }}
