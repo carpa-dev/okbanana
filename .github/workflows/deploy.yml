@@ -43,6 +43,9 @@ jobs:
           VITE_WRITE_SHEET_NAME: ${{ secrets.VITE_WRITE_SHEET_NAME }}
           VITE_WRITE_SHEET_URL: ${{ secrets.VITE_WRITE_SHEET_URL }}
 
+          VITE_LOAD_SHEET_KEY: ${{ secrets.VITE_LOAD_SHEET_KEY }}
+          VITE_LOAD_SHEET_NAME: ${{ secrets.VITE_LOAD_SHEET_NAME }}
+          VITE_LOAD_SHEET_URL: ${{ secrets.VITE_LOAD_SHEET_URL }}
       # Deploy if PR
       - name: Setup Pages
         uses: actions/configure-pages@v5
