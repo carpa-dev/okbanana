@@ -27,6 +27,7 @@ body {
   margin: 0 auto;
 }
 
+
 .app {
   display: flex;
   flex-direction: column;
@@ -51,44 +52,6 @@ body {
   padding: 0 1rem;
 }
 
-
-.headlines {
-  padding-bottom: 5rem;
-}
-
-.middle .headline {
-  font-size: min(21vw, 8rem);
-  text-align: center;
-  text-transform: uppercase;
-
-  /* gradient effect */
-  background-image: linear-gradient(#C9D61C, #E98D0D);
-  color: transparent;
-  background-clip: text;
-}
-
-.middle .subheadline {
-  font-size: min(8vw, 2.5rem);
-  text-align: center;
-  margin-top: 0;
-}
-
-.search {
-  padding: 3rem 0;
-}
-.search form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-.search input {
-  width: 100%;
-}
-.search button {
-  width: min(100%, 15rem);
-}
 
 /** Basic components **/
 .btn {

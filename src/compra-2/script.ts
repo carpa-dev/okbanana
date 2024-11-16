@@ -87,7 +87,7 @@ async function submit(form: FormData) {
     import.meta.env.VITE_WRITE_SHEET_URL
   );
 
-  const response = await fetch(url, {
+  await fetch(url, {
     method: 'POST',
     body: JSON.stringify({
       key,
