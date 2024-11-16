@@ -44,7 +44,7 @@ document
     const form = new FormData(e.currentTarget as HTMLFormElement);
     const email = form.get('email')?.toString();
     if (!email) {
-      console.warn("Could not find field 'item' of submitted form");
+      console.warn("Could not find field 'email' of submitted form");
       return;
     }
 
@@ -52,13 +52,21 @@ document
     searchParams.set('email', email);
 
     // Submit to API
-    await submit(form);
+    try {
+      await submit(form);
 
-    // Then redirect to success page
-    location.href = '../compra-success/?' + searchParams.toString();
+      // Then redirect to success page
+      location.href = '../compra-success/?' + searchParams.toString();
+    } catch (e) {
+      alert(e);
+    }
   });
 
 function assertExistence(k: string, v: string) {
+  if (v === 'anonymous') {
+    return '';
+  }
+
   if (!v) {
     throw new Error(`Could not find contents of env var: '${k}'`);
   }
@@ -94,9 +102,17 @@ async function submit(form: FormData) {
         Descrição: form.get('desc'),
       },
     }),
-  });
-
-  if (!response.ok) {
-    alert('Falhou ao salvar.');
-  }
+  })
+    .then((r) => {
+      if (r.ok) {
+        return r.json();
+      }
+      return Promise.reject('Response is not ok');
+    })
+    .then((r) => {
+      if (![200, 201].includes(r.status)) {
+        return Promise.reject(`Response failed: ${JSON.stringify(r)}`);
+      }
+      return r;
+    });
 }
