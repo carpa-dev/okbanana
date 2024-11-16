@@ -35,13 +35,14 @@ document
   .querySelector<HTMLFormElement>('#form')
   ?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const formEl = e.currentTarget as HTMLFormElement;
 
     if (!e.currentTarget) {
       console.warn("Could not find 'currentTarget' of submitted form");
       return;
     }
 
-    const form = new FormData(e.currentTarget as HTMLFormElement);
+    const form = new FormData(formEl);
     const email = form.get('email')?.toString();
     if (!email) {
       console.warn("Could not find field 'email' of submitted form");
@@ -50,17 +51,28 @@ document
 
     const searchParams = new URLSearchParams('');
     searchParams.set('email', email);
+    const button = formEl.querySelector('button');
 
     // Submit to API
     try {
+      button?.classList.add('loading');
+      button?.setAttribute('disabled', 'true');
+
       await submit(form);
 
       // Then redirect to success page
       location.href = '../compra-success/?' + searchParams.toString();
     } catch (e) {
       alert(e);
+    } finally {
+      button?.classList.remove('loading');
+      button?.removeAttribute('disabled');
     }
   });
+
+//function delay() {
+//  return new Promise((resolve) => setTimeout(resolve, 2000000));
+//}
 
 function assertExistence(k: string, v: string) {
   if (v === 'anonymous') {
