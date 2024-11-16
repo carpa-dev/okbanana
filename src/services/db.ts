@@ -65,12 +65,12 @@ function handleResponse(r: Response) {
 
 export function loadCompras(): Promise<Array<ReturnType<typeof sheetToData>>> {
   const key = assertExistence(
-    'VITE_WRITE_SHEET_KEY',
-    import.meta.env.VITE_WRITE_SHEET_KEY
+    'VITE_LOAD_SHEET_KEY',
+    import.meta.env.VITE_LOAD_SHEET_KEY
   );
   const url = assertExistence(
-    'VITE_WRITE_SHEET_URL',
-    import.meta.env.VITE_WRITE_SHEET_URL
+    'VITE_LOAD_SHEET_URL',
+    import.meta.env.VITE_LOAD_SHEET_URL
   );
   const sheet = assertExistence(
     'VITE_LOAD_SHEET_NAME',
